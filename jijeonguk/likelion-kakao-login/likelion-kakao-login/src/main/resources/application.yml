@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: prod
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+
+logging:
+  level:
+    org.hibernate.spl: debug
+    org.hibernate.type: trace
+
+kakao:
+  client_id: ${kakao.client_id}
+  redirect_uri: ${kakao.redirect_uri}
+
+jwt:
+  secret: ${jwt.secret}
+  access-token-validity-in-milliseconds: ${jwt.access-token-validity-in-milliseconds}
